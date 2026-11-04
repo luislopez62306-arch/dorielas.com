@@ -1,0 +1,8 @@
+{
+  "name": "Remix Dorielas Birthday - Invitación Digital",
+  "description": "Invitación moderna, minimalista y audaz en blanco y negro para la celebración del cumpleaños de Dorielas en Pizza Nostra.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

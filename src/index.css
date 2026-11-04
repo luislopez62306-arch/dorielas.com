@@ -1,0 +1,256 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-editorial {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.03em;
+  }
+  .font-cinzel {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.05em;
+  }
+  .font-montserrat {
+    font-family: 'Montserrat', system-ui, sans-serif;
+  }
+  .font-syne {
+    font-family: 'Syne', sans-serif;
+  }
+  .font-italiana {
+    font-family: 'Italiana', serif;
+  }
+  .font-sans-clean {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Custom scrollbar and aesthetics */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #333333;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #666666;
+}
+
+@keyframes subtle-vibrate {
+  0% { transform: translate(0, 0) scale(1); }
+  20% { transform: translate(-3px, 1px) scale(0.995); }
+  40% { transform: translate(3px, -2px) scale(1.008); }
+  60% { transform: translate(-2px, 2px) scale(0.997); }
+  80% { transform: translate(2px, -1px) scale(1.003); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes success-pop {
+  0% { transform: scale(0.88); opacity: 0; }
+  60% { transform: scale(1.04); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-vibrate-subtle {
+  animation: subtle-vibrate 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.animate-success-pop {
+  animation: success-pop 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes seal-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 25px 8px rgba(255, 255, 255, 0.35);
+  }
+}
+
+@keyframes envelope-unseal {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(1.03) translateY(-8px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.1) translateY(-60px);
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@keyframes seal-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.45);
+  }
+}
+
+.animate-seal-pulse {
+  animation: seal-pulse 2s infinite ease-in-out;
+}
+
+@keyframes envelope-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-14px) rotate(-0.8deg);
+  }
+  50% {
+    transform: translateY(-22px) rotate(0.6deg);
+  }
+  75% {
+    transform: translateY(-10px) rotate(-0.4deg);
+  }
+}
+
+.animate-envelope-float {
+  animation: envelope-float 3.6s ease-in-out infinite;
+}
+
+@keyframes shadow-breath {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+    filter: blur(18px);
+  }
+  50% {
+    transform: scale(0.82);
+    opacity: 0.3;
+    filter: blur(28px);
+  }
+}
+
+.animate-shadow-breath {
+  animation: shadow-breath 3.6s ease-in-out infinite;
+}
+
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-180%) skewX(-25deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  38% {
+    transform: translateX(280%) skewX(-25deg);
+    opacity: 0.9;
+  }
+  42%, 100% {
+    transform: translateX(280%) skewX(-25deg);
+    opacity: 0;
+  }
+}
+
+.animate-shimmer-sweep {
+  animation: shimmer-sweep 3.4s ease-in-out infinite;
+}
+
+@keyframes seal-crack {
+  0% { transform: scale(1) rotate(0deg); filter: brightness(1); }
+  20% { transform: scale(1.2) rotate(-6deg); filter: brightness(1.5); }
+  45% { transform: scale(0.9) rotate(5deg); filter: brightness(1.8); }
+  70% { transform: scale(1.28) rotate(-3deg); filter: brightness(2.2); }
+  100% { transform: scale(1.4) rotate(0deg); opacity: 0; }
+}
+
+.animate-seal-crack {
+  animation: seal-crack 0.45s ease-out forwards;
+}
+
+@keyframes flap-open-3d {
+  0% {
+    transform: rotateX(0deg);
+    z-index: 20;
+  }
+  100% {
+    transform: rotateX(-180deg);
+    z-index: 5;
+  }
+}
+
+.animate-flap-open {
+  transform-origin: top center;
+  animation: flap-open-3d 0.85s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes card-rise-out {
+  0% {
+    transform: translateY(25%) scale(0.9);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-46%) scale(1.02);
+    opacity: 1;
+  }
+}
+
+.animate-card-rise-out {
+  animation: card-rise-out 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes envelope-open-transition {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(1.03) translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.15) translateY(-85px);
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.animate-envelope-unseal {
+  animation: envelope-open-transition 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes float-particle {
+  0%, 100% {
+    transform: translateY(0px) scale(0.85);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translateY(-24px) scale(1.2);
+    opacity: 0.95;
+  }
+}
+
+.animate-float-particle {
+  animation: float-particle 3.2s ease-in-out infinite;
+}
